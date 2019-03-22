@@ -1,8 +1,4 @@
-<?php 
-	// define the __CONFIG__ to use the config.php
-	define('__CONFIG__', true);
-	require_once "inc/config.php"; 
-?>
+
 <DOCTYPE html>
 
 	<html lang="en">
@@ -14,15 +10,20 @@
 		<title>PHP Login Course</title>
 		<base href="/" />
 		<!-- UIkit CSS -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.30/css/uikit.min.css" />
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/css/uikit.min.css" />   -->
+        <?php
+        // define the __CONFIG__ to use the config.php
+        define('__CONFIG__', true);
+        require_once "inc/config.php";
+        require_once "inc/footer.php";
+        ?>        <!-- UIkit JS -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>  -->
 
 	</head>
 	<body>
-		<?php 
-			require_once "inc/footer.php"; 
-		?>
 		<div class="uk-section uk-container">
-			<div class="uk-grid uk-child-width-1-3@s uk-child-width-1-1" uk-grid="">
+			<div class="uk-grid uk-child-width-1-3@s uk-child-width-1-1"  uk-grid="">
 				<form class="uk-form-stacked js-login">
 					
 					<h2>Login</h2>
@@ -44,6 +45,7 @@
 				    <div class="uk-margin">
 				        <button class="uk-button uk-button-default" type="submit">Log-in</button>
 				    </div>
+
 				</form>
 			</div>
 			<!-- <?php echo "Hello,    David!  You are looking spritely today."; ?>  -->

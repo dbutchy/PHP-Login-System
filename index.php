@@ -12,9 +12,9 @@
 		<meta name="viewport" content="width=device-width, intial-scale=1" />
 		<meta name="robots" content="follow" />
 		<title>PHP Login Course</title>
-		<base href="/php-login-course/" />
+		<base href="/" />
 		<!-- UIkit CSS -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.30/css/uikit.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/css/uikit.min.css" />
 
 	</head>
 	<body>
@@ -25,9 +25,12 @@
 			<?php 
 			echo "Hello,    David!  You are looking spritely today, date: ";
 			echo date('Y m d'); 
-			?>  
-			<a href="login.php">Login</a>
+			?>
+            <a href="login.php">Login</a>
 			<a href="register.php">Register</a>
 		</div>
-	</body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>
+
+    </body>
 	</html>
