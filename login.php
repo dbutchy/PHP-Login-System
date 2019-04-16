@@ -5,7 +5,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE-edge" />
-		<meta name="viewport" content="width=device-width, intial-scale=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="robots" content="follow" />
 		<title>PHP Login Course</title>
 		<base href="/" />
@@ -29,16 +29,16 @@
 					<h2>Login</h2>
 
 				    <div class="uk-margin">
-				        <label class="uk-form-label" for="form-stacked-text">Email</label>
+				        <label class="uk-form-label" for="form-stacked-text1">Email</label>
 				        <div class="uk-form-controls">
-				            <input class="uk-input" id="form-stacked-text" type="email" required="required" placeholder="joe@gmail.com">
+				            <input class="uk-input" id="form-stacked-text1" type="email" required="required" placeholder="joe@gmail.com">
 				        </div>
 				    </div>
 
 				    <div class="uk-margin">
-				        <label class="uk-form-label" for="form-stacked-text">Password</label>
+				        <label class="uk-form-label" for="form-stacked-text2">Password</label>
 				        <div class="uk-form-controls">
-				            <input class="uk-input" id="form-stacked-text" type="password"  required="required" placeholder="your password">
+				            <input class="uk-input" id="form-stacked-text2" type="password"  required="required" placeholder="your password">
 				        </div>
 				    </div>
 
