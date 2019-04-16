@@ -18,9 +18,7 @@
 
 	</head>
 	<body>
-		<?php 
-			require_once "inc/footer.php"; 
-		?>
+
 		<div class="uk-section uk-container">
 			<div class="uk-grid uk-child-width-1-3@s uk-child-width-1-1" uk-grid="">
 				<form class="uk-form-stacked js-register">
@@ -40,7 +38,7 @@
 				            <input class="uk-input" id="form-stacked-text2" type="password"  required="required" placeholder="your password">
 				        </div>
 				    </div>
-
+                    <div class="uk-margin uk-alert uk-alert-danger js-error" style='display: none'></div>
 				    <div class="uk-margin">
 				        <button class="uk-button uk-button-default" type="submit">Register</button>
 				    </div>
@@ -48,5 +46,8 @@
 			</div>
 			<!-- <?php echo "Hello,    David!  You are looking spritely today."; ?>  -->
 		</div>
+        <?php
+        require_once "inc/footer.php";
+        ?>
 	</body>
 	</html>

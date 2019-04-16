@@ -10,12 +10,11 @@
 		<title>PHP Login Course</title>
 		<base href="/" />
 		<!-- UIkit CSS -->
-        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/css/uikit.min.css" />   -->
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/css/uikit.min.css" />
         <?php
         // define the __CONFIG__ to use the config.php
         define('__CONFIG__', true);
         require_once "inc/config.php";
-        require_once "inc/footer.php";
         ?>        <!-- UIkit JS -->
         <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>  -->
@@ -50,5 +49,9 @@
 			</div>
 			<!-- <?php echo "Hello,    David!  You are looking spritely today."; ?>  -->
 		</div>
+        <?php
+        // define the __CONFIG__ to use the config.php
+         require_once "inc/footer.php";
+        ?>        <!-- UIkit JS -->
 	</body>
 	</html>
