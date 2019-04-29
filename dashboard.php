@@ -7,6 +7,8 @@
  */
 define('__CONFIG__', true);
 require_once "inc/config.php";
+//echo '  your user id is ' . $_SESSION['user_id'];
+//exit;
 ?>
 <!DOCTYPE html>
 

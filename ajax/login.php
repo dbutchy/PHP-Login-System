@@ -15,31 +15,29 @@
         header('Content-Type: application/json');
         $return = [];
         $email = Filter::String($_POST['email']);
+        $password = $_POST['password'];
         //make sure user does not exist
-        $findUser = $con->prepare("SELECT user_id FROM users WHERE email = LOWER(:email) LIMIT 1;");
+        $findUser = $con->prepare("SELECT user_id, password FROM users WHERE email = LOWER(:email) LIMIT 1;");
         $findUser->bindParam(':email',$email, PDO::PARAM_STR);
         $findUser->execute();
         if($findUser->rowCount() == 1){
-            $return['error'] = "You already have an account!  You cannot register a second time.";
-            $return['is_logged_in'] = false;
+            $user = $findUser->fetch(PDO::FETCH_ASSOC);
+            $user_id = (int) $user['user_id'];
+            $hashPassword = $user['password'];
+            if (password_verify($password, $hashPassword)){
+                $return['redirect'] = 'dashboard.php';
+                $return['is_logged_in'] = true;
+                $_SESSION['user_id'] = $user_id;
+            } else{
+                $return['error'] = 'The password is not correct. Please try again, or if you do not remember your password then request a <a href="">password reset</a>.';
+                $return['is_logged_in'] = false;
+            }
+
         } else {
          //need to add error trapping  for when any of these operations fail (e.g. user_id not autoincrement)
-            $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-            $addUser = $con->prepare("INSERT INTO users (email, password) VALUES(:email, :password);");
-            $addUser->bindParam(':email', $email, PDO::PARAM_STR);
-            $addUser->bindParam(':password', $password, PDO::PARAM_STR);
-            $addUser->execute();
-            $user_id = $con->lastInsertId();
-            $_SESSION['user_id'] = (int) $user_id;
-            $return['redirect'] = 'dashboard.php?message=Welcome!';
-            $return['is_logged_in'] = true;
+            $return['error'] = "You do not have an account!  <a href=register.php>Create an Account</a>";
+            $return['is_logged_in'] = false;
         }
-        // make sure user can be added, then add
-
-        // assemble return info for a redirect js code
-        // FOR  a more direct redirect use:
-        // header('Location: https://www.google.com');
-
         //array('name'=>'Charlie')  is a key-value pair
         //$return['redirect'] = 'dashboard.php';
         $return['name'] = $_POST['email'];
