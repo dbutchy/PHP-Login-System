@@ -7,11 +7,12 @@
  */
 //    if(isset($_SESSION['user_id'])){
 //
-//        $_SESSION['user_id'] = 0;
-//        $_SESSION['email'] = '';
-//        header("Location: login.php");
-//    } else {
-//        header("Location: login.php");
-//    }
-    header("Location: login.php");
+    //$past = time() - 36000;
+    session_start();
+    session_destroy();
+    session_write_close();
+    setcookie(session_name(),'',0,'/');
+    session_regenerate_id(true);
+    header("Location: index.php");
 
+?>

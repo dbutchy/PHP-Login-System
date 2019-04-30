@@ -14,7 +14,11 @@ require_once "inc/config.php";
 //        $test = 'paul@yahoo.com';
 //        $pw = 'paul';
 //    }
+    if(isset($_SESSION['user_id'])){
+        $test = 'robert' . $_SESSION['user_id'] . '@yahoo.com';
+    } else{
         $test = 'robert@yahoo.com';
+    }
         $pw = 'robert';
 
     ?>
