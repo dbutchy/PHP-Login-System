@@ -31,7 +31,8 @@
             $addUser->execute();
             $user_id = $con->lastInsertId();
             $_SESSION['user_id'] = (int) $user_id;
-            $return['redirect'] = 'dashboard.php?message=Welcome!';
+            $_SESSION['email'] = $email;
+            $return['redirect'] = 'dashboard.php';
             $return['is_logged_in'] = true;
         }
         // make sure user can be added, then add

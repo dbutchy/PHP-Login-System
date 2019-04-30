@@ -27,9 +27,10 @@
             if (password_verify($password, $hashPassword)){
                 $return['redirect'] = 'dashboard.php';
                 $return['is_logged_in'] = true;
-                $_SESSION['user_id'] = $user_id;
+                $_SESSION['user_id'] = (int) $user_id;
+                $_SESSION['email'] = $email;
             } else{
-                $return['error'] = 'The password is not correct. Please try again, or if you do not remember your password then request a <a href="">password reset</a>.';
+                $return['error'] = 'The password is not correct. Please try again, or if you do not remember your password then request a <a href="dashboard.php">password reset</a>.';
                 $return['is_logged_in'] = false;
             }
 

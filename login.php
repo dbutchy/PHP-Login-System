@@ -1,5 +1,24 @@
+<?php
+// define the __CONFIG__ to use the config.php
+define('__CONFIG__', true);
+require_once "inc/config.php";
 
-<DOCTYPE html>
+    // IF ALREADY LOGGED IN, DIRECT TO dashboard.php
+    //DirectLoggedInUser();
+//    if(isset($_SESSION['user_id']) && ($_SESSION['user_id'] != null)){
+//    header("Location : dashboard.php"); exit;
+//    //    exit;
+//        $test = 'robert@yahoo.com';
+//        $pw = 'robert';
+//    }else{
+//        $test = 'paul@yahoo.com';
+//        $pw = 'paul';
+//    }
+        $test = 'robert@yahoo.com';
+        $pw = 'robert';
+
+    ?>
+<!DOCTYPE html>
 
 	<html lang="en">
 	<head>
@@ -11,11 +30,7 @@
 		<base href="/" />
 		<!-- UIkit CSS -->
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/css/uikit.min.css" />
-        <?php
-        // define the __CONFIG__ to use the config.php
-        define('__CONFIG__', true);
-        require_once "inc/config.php";
-        ?>        <!-- UIkit JS -->
+        <!-- UIkit JS -->
         <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>  -->
 
@@ -30,14 +45,14 @@
 				    <div class="uk-margin">
 				        <label class="uk-form-label" for="form-stacked-text1">Email</label>
 				        <div class="uk-form-controls">
-				            <input class="uk-input" id="form-stacked-text1" type="email" required="required" value="tom@gmail.com">
+				            <input class="uk-input" id="form-stacked-text1" type="email" required="required" value="<?php   echo $test;  ?>">
 				        </div>
 				    </div>
 
 				    <div class="uk-margin">
 				        <label class="uk-form-label" for="form-stacked-text2">Password</label>
 				        <div class="uk-form-controls">
-				            <input class="uk-input" id="form-stacked-text2" type="password"  required="required" value="tomtom">
+				            <input class="uk-input" id="form-stacked-text2" type="password"  required="required" value="<?php   echo $pw;  ?>">
 				        </div>
 				    </div>
                     <div class="uk-margin uk-alert uk-alert-danger js-error" style='display: none'></div>

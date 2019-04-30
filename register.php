@@ -1,14 +1,18 @@
 <?php 
-	// define the __CONFIG__ to use the config.php
+
+
+
+// define the __CONFIG__ to use the config.php
 	define('__CONFIG__', true);
 	require_once "inc/config.php";
-
+// IF ALREADY LOGGED IN, DIRECT TO dashboard.php
+//    DirectLoggedInUser();
 //	$passw = 'Freddie';
 //	echo $passw . '<hr>';
 //    echo  password_hash($passw, PASSWORD_DEFAULT);
 //    exit();
 ?>
-<DOCTYPE html>
+<!DOCTYPE html>
 
 	<html lang="en">
 	<head>
@@ -53,7 +57,7 @@
                     </div>
                     <div class="uk-margin uk-alert uk-alert-danger js-error" style='display: none'></div>
 				    <div class="uk-margin">
-				        <button class="uk-button uk-button-default" type="submit">Register</button>
+				        <button class="uk-button uk-button-default" type="submit">Register</button><a href="login.php" >   Login</a>
 				    </div>
 				</form>
 			</div>

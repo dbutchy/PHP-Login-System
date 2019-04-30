@@ -9,6 +9,13 @@ define('__CONFIG__', true);
 require_once "inc/config.php";
 //echo '  your user id is ' . $_SESSION['user_id'];
 //exit;
+//    if(isset($_SESSION['user_id'])){
+//        // user is allowed to see content
+//    } else{
+//        header("Location : login.php");
+//        exit;
+//    }
+    ForceLogin();
 ?>
 <!DOCTYPE html>
 
@@ -29,11 +36,14 @@ require_once "inc/config.php";
 
 <div class="uk-section uk-container">
     <?php
-    echo "Hello,    David!  You are at your DASHBOARD, on: ";
-    echo date('Y m d');
+    $email = $_SESSION['email'];
+    echo "Hello,    " . $email . " !  You are at your DASHBOARD, on: ";
+    echo date('Y m d') . ' <br>';
+    echo "your user id is " . $_SESSION['user_id'];
     ?>
     <a href="login.php">Login</a>
     <a href="register.php">Register</a>
+    <a href="logout.php">Logout</a>
 </div>
 <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script> -->
